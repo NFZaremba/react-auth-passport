@@ -12,8 +12,10 @@ import { UserInterface } from "./interfaces/UserInterface";
 
 const LocalStrategy = passportLocal.Strategy;
 
+dotenv.config();
+
 mongoose.connect(
-  "mongodb+srv://nfz32:eidcEuQFTvl1uYjl@cluster0.gptnv.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  `${process.env.DBSTRING}${process.env.USERNAME}:${process.env.PASSWORD}${process.env.CLUSTERSTRING}`,
   {
     useCreateIndex: true,
     useNewUrlParser: true,
