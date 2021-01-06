@@ -67,6 +67,7 @@ passport.deserializeUser((id: string, cb) => {
     const userInformation = {
       username: user.username,
       isAdmin: user.isAdmin,
+      id: user._id,
     };
     cb(err, userInformation);
   });
